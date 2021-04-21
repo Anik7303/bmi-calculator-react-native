@@ -5,10 +5,12 @@ import { StatusBar } from 'expo-status-bar'
 
 import { Colors, Gender } from '../config'
 import GenderSelector from '../components/GenderSelector'
+import HeightSelector from '../components/HeightSelector'
 
 const Home = () => {
     const [selectedGender, setSelectedGender] = useState(Gender.Male)
-    console.log({ selectedGender })
+    const [height, setHeight] = useState(180)
+    console.log({ selectedGender, height })
 
     return (
         <SafeAreaView style={styles.container}>
@@ -17,6 +19,7 @@ const Home = () => {
                 selectedGender={selectedGender}
                 onSelect={setSelectedGender}
             />
+            <HeightSelector height={height} onChange={setHeight} />
         </SafeAreaView>
     )
 }
@@ -30,6 +33,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Colors.black,
+        padding: 10,
     },
 })
 
