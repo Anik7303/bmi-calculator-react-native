@@ -34,16 +34,15 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         margin: 10,
-        maxHeight: 300,
     },
     heightScale: {
         color: Colors.grey,
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: '400',
     },
     heightText: {
         color: Colors.white,
-        fontSize: 70,
+        fontSize: 60,
         fontWeight: '700',
     },
     slider: {
@@ -52,9 +51,8 @@ const styles = StyleSheet.create({
     },
     text: {
         color: Colors.grey,
-        fontSize: 20,
+        fontSize: 18,
         letterSpacing: 1.2,
-        marginTop: '6%',
         textTransform: 'uppercase',
     },
 })

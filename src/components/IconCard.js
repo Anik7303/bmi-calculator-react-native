@@ -7,7 +7,7 @@ import { Colors } from '../config'
 const IconCard = ({ backgroundColor, color, icon, onPress, title }) => (
     <TouchableWithoutFeedback onPress={onPress}>
         <View style={[styles.container, { backgroundColor }]}>
-            <FontAwesome name={icon} size={70} color={color} />
+            <FontAwesome name={icon} size={60} color={color} />
             <Text style={[styles.text, { color }]}>{title}</Text>
         </View>
     </TouchableWithoutFeedback>
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: Colors.grey,
-        fontSize: 20,
+        fontSize: 18,
         letterSpacing: 1.2,
         marginTop: '6%',
         textTransform: 'uppercase',
