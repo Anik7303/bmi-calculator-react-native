@@ -7,6 +7,7 @@ import { Colors, Gender } from '../config'
 import GenderSelector from '../components/GenderSelector'
 import HeightSelector from '../components/HeightSelector'
 import NumberCard from '../components/NumberCard'
+import Button from '../components/Button'
 
 const Home = ({ navigation }) => {
     const [selectedGender, setSelectedGender] = useState(Gender.Male)
@@ -22,45 +23,36 @@ const Home = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar style="light" />
-            <GenderSelector
-                selectedGender={selectedGender}
-                onSelect={setSelectedGender}
-            />
-            <HeightSelector height={height} onChange={setHeight} />
-            <View style={styles.weightAgeContainer}>
-                <NumberCard
-                    onChange={setWeight}
-                    title="weight"
-                    value={weight}
+            <View style={styles.inputContainer}>
+                <GenderSelector
+                    selectedGender={selectedGender}
+                    onSelect={setSelectedGender}
                 />
-                <NumberCard onChange={setAge} title="age" value={age} />
+                <HeightSelector height={height} onChange={setHeight} />
+                <View style={styles.weightAgeContainer}>
+                    <NumberCard
+                        onChange={setWeight}
+                        title="weight"
+                        value={weight}
+                    />
+                    <NumberCard onChange={setAge} title="age" value={age} />
+                </View>
             </View>
-            <TouchableOpacity style={styles.calculateButton} onPress={onSubmit}>
-                <Text style={styles.text}>Calculate</Text>
-            </TouchableOpacity>
+            <Button onPress={onSubmit} title="Calculate BMI" />
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
-    calculateButton: {
-        flex: 1,
-        backgroundColor: Colors.crimson,
-        maxHeight: 80,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     container: {
+        alignItems: 'stretch',
         flex: 1,
         backgroundColor: Colors.black,
-        padding: 10,
     },
-    text: {
-        color: Colors.white,
-        fontSize: 30,
-        fontWeight: '700',
-        letterSpacing: 1.0,
-        textTransform: 'uppercase',
+    inputContainer: {
+        flex: 1,
+        justifyContent: 'space-between',
+        padding: 10,
     },
     weightAgeContainer: {
         flex: 1,
